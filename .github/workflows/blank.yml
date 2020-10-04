@@ -21,13 +21,12 @@ jobs:
          
        - name: Clean Up
          run: |
-           docker rmi `docker images -q`
-           sudo -E apt-get update
+           sudo apt-get update
            
        - name: Initialization environment
          run: |
-            sudo -E apt-get -qq update
-            sudo -E apt-get -qq install build-essential cpio liblz4-dev zipalign p7zip fakeroot gcc make bc curl git zip
+            sudo apt-get update
+            sudo apt-get install -y build-essential cpio liblz4-dev zipalign p7zip fakeroot gcc make bc curl git zip
       
        - name: Clone Build ToolChain
          run: |
